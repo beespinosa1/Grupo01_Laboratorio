@@ -48,12 +48,12 @@
         xhttp.onload = function () {
             const xmlDoc = xhttp.responseXML;
             producto = xmlDoc.getElementsByTagName("PRODUCTO");
-            cargarTabla();
+            CargarTabla();
         }
         xhttp.open("GET", "xml/ventas.xml", true);
         xhttp.send();
 
-        function cargarTabla() {
+        function CargarTabla() {
             let table = "<tr><th>Numero</th><th>Title</th><th>Descripción</th><th>PrecioU</th><th>Cantidad</th><th>PrecioT</th></tr>";
             for (let i = 0; i < producto.length; i++) {
                 table += "<tr><td>";
