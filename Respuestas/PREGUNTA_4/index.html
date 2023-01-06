@@ -17,6 +17,16 @@
             top: 0px;
             left: 0px;
         }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+
     </style>
 </head>
 
@@ -59,9 +69,9 @@
             var i;
             var xmlDoc = xml.responseXML;
             var table = "<tr><th>Numero</th><th>Title</th><th>Descripción</th><th>PrecioU</th><th>Cantidad</th><th>PrecioT</th></tr>";
-            var prductos = xmlDoc.getElementsByTagName("productos");
-            let table = "<tr><th>Numero</th><th>Title</th><th>Descripción</th><th>PrecioU</th><th>Cantidad</th><th>PrecioT</th></tr>";
-            for (let i = 0; i < productos.length; i++) {
+            var prductos = xmlDoc.getElementsByTagName("PRODUCTO");
+            
+            for (i = 0; i < productos.length; i++) {
                 table += "<tr><td>" +
                     productos[i].getElementsByTagName("NUMERO")[0].childNodes[0].nodeValue +
                     "</td><td>" +
