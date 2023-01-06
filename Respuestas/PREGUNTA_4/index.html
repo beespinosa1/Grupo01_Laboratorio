@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pregunta 4</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style type="text/css">
+        #background {
+            position: absolute;
+            width: 99%;
+            height: 130%;
+        }
+
+        #fixed {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img id="background" src="../../Imagenes/fondo.jpg" />
+    </div>
+
+    <div id="fixed" style="padding-left:30%; padding-top: 10%;">
+        <br>
+        <img src="../../Imagenes/selloespe.jpg" width="65%" align="center">
+        <h1 style="padding-left:25%;">Pregunta 4</h1>
+        <p>4) Mostrar datos XML en una tabla utilizando AJAX</p>
+
+        <button style="align-self: center;" type="button" onclick="CargarDatos()">Obtener Tabla</button>
+
+        <table id="tablaVentas"></table>
+
+        <button onclick="window.location.href='../../index.html'">Menu principal</button>
+
+        <script>
+            const xhttp = new XMLHttpRequest();
+            let producto;
+            xhttp.onload = function () {
+                const xmlDoc = xhttp.responseXML;
+                producto = xmlDoc.getElementsByTagName("PRODUCTO");
+                cargarTabla();
+            }
+            xhttp.open("GET", "ventas.xml", true);
+            xhttp.send();
+
+            function cargarTabla() {
+                let table = "<tr><th>Numero</th><th>Title</th><th>Descripción</th><th>PrecioU</th><th>Cantidad</th><th>PrecioT</th></tr>";
+                for (let i = 0; i < producto.length; i++) {
+                    table += producto[i].getElementsByTagName("NUMERO")[0].childNodes[0].nodeValue;
+                    table += "</td><td>";
+                    table += producto[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+                    table += "</td><td>";
+                    table += producto[i].getElementsByTagName("DESCRIPCION")[0].childNodes[0].nodeValue;
+                    table += "</td><td>";
+                    table += producto[i].getElementsByTagName("PRECIOU")[0].childNodes[0].nodeValue;
+                    table += "</td><td>";
+                    table += producto[i].getElementsByTagName("CANTIDAD")[0].childNodes[0].nodeValue;
+                    table += "</td><td>";
+                    table += producto[i].getElementsByTagName("PRECIOT")[0].childNodes[0].nodeValue;
+                    table += "</td></tr>";
+                }
+                document.getElementById("tablaVentas").innerHTML = table;
+            }
+
+        </script>
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
