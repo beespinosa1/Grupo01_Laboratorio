@@ -56,22 +56,20 @@
   
   //Funcion para recuperar los datos del archivo .txt
   function CargarDatos() {
-    xhttp = new XMLHttpRequest(); //Creacion del objeto XMLHttpRequest
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("resolucion").innerHTML =
-        this.responseText;
-      }
-    };
-    
-    xhttp.open("GET", "ejemplo.xml", true);//Enviar la solicitud para obtener el archivo .txt
-    xhttp.send();  // Solo funciona con el protocolo http (on-line)
 
-  
-    
-    
+  xhttp = new XMLHttpRequest(); //Creacion del objeto XMLHttpRequest
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("resolucion").innerHTML = getElementsByTagName("nombre")[0].childNodes[0].nodeValue + "come" + getElementsByTagName("comida")[0].childNodes[0].nodeValue;
+      this.responseText;
+    }
+  };
+
+  xhttp.open("GET", "ejemplo.xml", true);//Enviar la solicitud para obtener el archivo .txt
+  xhttp.send();  // Solo funciona con el protocolo http (on-line)
+
   }
-  
+
 </script>
 
 </body>
