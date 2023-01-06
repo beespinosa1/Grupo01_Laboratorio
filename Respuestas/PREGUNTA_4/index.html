@@ -69,7 +69,7 @@
             var i;
             var xmlDoc = xml.responseXML;
             var table = "<tr><th>Numero</th><th>Title</th><th>Descripción</th><th>PrecioU</th><th>Cantidad</th><th>PrecioT</th></tr>";
-            var prductos = xmlDoc.getElementsByTagName("PRODUCTO");
+            var productos = xmlDoc.getElementsByTagName("PRODUCTO");
 
             for (i = 0; i < productos.length; i++) {
                 table += "<tr><td>" +
