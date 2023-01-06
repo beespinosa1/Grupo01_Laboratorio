@@ -31,7 +31,9 @@
         <h1 style="padding-left:25%;">Pregunta 4</h1>
         <p>4) Mostrar datos XML en una tabla utilizando AJAX</p>
 
-        <button style="align-self: center;" type="button" onclick="CargarDatos()">Obtener Tabla</button>
+        <div class="section" id="enunciado" style="padding-left:25%;margin-top: 5%;">
+            <button style="align-self: center;" type="button" onclick="cargarTabla()">Obtener Tabla</button>
+          </div>
 
         <table id="tablaVentas"></table>
 
@@ -51,6 +53,7 @@
             function cargarTabla() {
                 let table = "<tr><th>Numero</th><th>Title</th><th>Descripción</th><th>PrecioU</th><th>Cantidad</th><th>PrecioT</th></tr>";
                 for (let i = 0; i < producto.length; i++) {
+                    table += "<tr><td>";
                     table += producto[i].getElementsByTagName("NUMERO")[0].childNodes[0].nodeValue;
                     table += "</td><td>";
                     table += producto[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
@@ -64,7 +67,6 @@
                     table += producto[i].getElementsByTagName("PRECIOT")[0].childNodes[0].nodeValue;
                     table += "</td></tr>";
                 }
-                document.getElementById("tablaVentas").innerHTML = table;
             }
 
         </script>
