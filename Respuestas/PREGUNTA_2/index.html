@@ -61,11 +61,11 @@
       }
     };
 
-    xhttp.open("GET", "ejemplo.xml", true);//Enviar la solicitud para obtener el archivo .txt
+    xhttp.open("GET", "ejemplo.xml", true);//Enviar la solicitud para obtener el archivo .xml
     xhttp.send();  // Solo funciona con el protocolo http (on-line)
 
 
-    //Funcion para recuperar los datos del archivo .txt
+    //Funcion para recuperar los datos del archivo .xml
     function CargarDatos() {
       var xmlDoc = xhttp.responseXML;
       var i;
