@@ -1,26 +1,26 @@
 {
   "peliculas": [
     {
-      "Genero": "Terror",
-      "Nombre": "Annabel ",
-      "Protagonista": "Patrick Williams"
+      "Genero": "Ciencia Ficción",
+      "Nombre": "The Matrix",
+      "Protagonista": "Keanu Reaves"
     },
 
     {
-      "Genero": "Terror",
-      "Nombre": "Terror en Silent Hills",
-      "Protagonista": "Yodel Fredder"
+      "Genero": "Drama",
+      "Nombre": "Rocky ",
+      "Protagonista": "Sylvester Stallone"
     },
 
     {
-      "Genero": "Terror",
-      "Nombre": "It ",
-      "Protagonista": "Bill Skarsgård"
+      "Genero": "Drama",
+      "Nombre": "Top Gun",
+      "Protagonista": "Tom Cruise"
     },
     {
-      "Genero": "Terror",
-      "Nombre": "EL conjuro",
-      "Protagonista": "Vera Farmiga"
+      "Genero": "Ciencia Ficción",
+      "Nombre": "Edge of Tomorrow",
+      "Protagonista": "Tom Cruise"
     },
 
     {
@@ -43,8 +43,8 @@
 
     {
       "Genero": "Accion",
-      "Nombre": "Duro de Matar",
-      "Protagonista": "Bruce Willis"
+      "Nombre": "Constantine",
+      "Protagonista": "Keanu Reaves"
     },
 
     {
@@ -54,9 +54,9 @@
     },
 
     {
-      "Genero": "Drama",
-      "Nombre": "After",
-      "Protagonista": "Josephine Langford"
+      "Genero": "Accion",
+      "Nombre": "Jack Reacher",
+      "Protagonista": "Tom Cruise"
     },
 
     {
@@ -66,15 +66,21 @@
     },
 
     {
-      "Genero": "Drama",
-      "Nombre": "EL Origen",
+      "Genero": "Ciencia Ficción",
+      "Nombre": "Inception",
+      "Protagonista": "Leonardo Di caprio"
+    },
+
+    {
+      "Genero": "Drama, Comedia",
+      "Nombre": "El Lobo de Wall Street",
       "Protagonista": "Leonardo Di caprio"
     },
 
     {
       "Genero": "Drama",
-      "Nombre": "El padrino",
-      "Protagonista": "Al Pacino"
+      "Nombre": "Creed",
+      "Protagonista": "Sylvester Stallone"
     }
   ]
 }

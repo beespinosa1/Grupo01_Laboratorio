@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <meta charset="UTF-8">
   <title>Pregunta 3</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -29,21 +30,14 @@
     <br>
     <img src="../../Imagenes/selloespe.jpg" width="65%" align="center">
     <h1 style="padding-left:25%;">Pregunta 3</h1>
-    <p>Escoja su género de películas preferido para desplegar una tabla con la información correspondiente</p>
+    <p>Escoja su actor de películas preferido para desplegar una tabla con la información correspondiente</p>
     <select id="myselect" onchange="change_myselect(this.value)">
       <option value="">Elija uno de los siguientes Actores.</option>
-      <option value="PatrickWilliams">Patrick Williams</option>
-      <option value="YodelFredder">Yodel Fredder</option>
-      <option value="BillSkarsgård">Bill Skarsgård</option>
-      <option value="VeraFarmiga">Vera Farmiga</option>
-      <option value="KeanuReaves">Keanu Reaves</option>
-      <option value="SylvesterStallone">Sylvester Stallone</option>
-      <option value="TomCruise">Tom Cruise</option>
-      <option value="BruceWillis">Bruce Willis</option>
-      <option value="JosephineLangford">Josephine Langford</option>
-      <option value="BradPitt">Brad Pitt</option>
-      <option value="LeonardoDicaprio">Leonardo Di caprio</option>
-      <option value="AlPacino">Al Pacino</option>
+      <option value="Keanu Reaves">Keanu Reaves</option>
+      <option value="Sylvester Stallone">Sylvester Stallone</option>
+      <option value="Tom Cruise">Tom Cruise</option>
+      <option value="Brad Pitt">Brad Pitt</option>
+      <option value="Leonardo Di caprio">Leonardo Di caprio</option>
     </select>
     <p id="demo"></p>
     <br>
@@ -59,13 +53,21 @@
       dbParam = JSON.stringify(obj);
       xmlhttp = new XMLHttpRequest();
 
-
       xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var myObj = JSON.parse(this.responseText);
+          var table = "<table border='1'><tr><th>Genero</th><th>Nombre</th></tr>";
+          var i;
 
-
-
+          for (i in myObj.peliculas) {
+            if (myObj.peliculas[i].Protagonista == sel) {
+              table += "<tr><td>" + myObj.peliculas[i].Genero + "</td><td>" + myObj.peliculas[i].Nombre + "</td></tr>";
+            }
+          }
+          table += "</table>";
+          document.getElementById("demo").innerHTML = table;
+        }
       };
-
 
       xmlhttp.open("GET", "ListaPeliculas.json", true);
       xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -74,5 +76,4 @@
   </script>
 
 </body>
-
-</html>
+ 
