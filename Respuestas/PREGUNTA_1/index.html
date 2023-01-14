@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<meta charset="UTF-8">
 	<title>Pregunta 1</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -29,9 +30,8 @@
 		<img src="../../Imagenes/selloespe.jpg" width="65%" align="center">
 		<h1 style="padding-left:25%;">Pregunta 1</h1>
 		<p id="pregunta"> Analizar una cadena de texto en un objeto DOM XML y extraer esa Información con JavaScript</p>
-		<p id="descripcion"> Para este ejercicio se utilizara una cadena de texto sobre marcas de celulares dentro de
-			una tienda.</p>
-		<p id="p3">Tienda de Celulares</p>
+		<p id="descripcion"> Para este ejercicio se utilizara una cadena de texto sobre animales dentro de un zoológico</p>
+		<p id="p3">Zoológico</p>
 		<p style="padding-left:15%;">
 			<button onclick="traerAnimal1();"> Traer Animal VIVO</button>
 			<button onclick="traerAnimal2();"> Traer Animal MUERTO</button>
@@ -49,12 +49,12 @@
 		var text =
 			// "<tienda><celular><marca>Samsung</marca><modelo>A30</modelo><estado>nuevo</estado></celular><celular><marca>iPhone</marca><modelo>XII</modelo><estado>Usado</estado></celular></tienda>";
 
-			"<zoologico><animal><mamifero><hola>111</hola>OSO</mamifero><habitat>clima frio</habitat><estado>vivo</estado></animal><animal><mamifero>Guacamayo</mamifero><habitat>clima calido</habitat><estado>muerto</estado></animal><animal><mamifero>Dinosaurio</mamifero><habitat>jungla</habitat><estado>extinto</estado></animal></zoologico>";
+			"<zoologico><animal><mamifero>OSO</mamifero><habitat>clima frio</habitat><estado>vivo</estado></animal><animal><mamifero>Guacamayo</mamifero><habitat>clima calido</habitat><estado>muerto</estado></animal><animal><mamifero>Dinosaurio</mamifero><habitat>jungla</habitat><estado>extinto</estado></animal></zoologico>";
 
 		function traerAnimal1() {
 			parser = new DOMParser();
 			xmlDoc = parser.parseFromString(text, "text/xml");
-			document.getElementById("p1").innerHTML = xmlDoc.getElementsByTagName("mamifero")[0].childNodes[1].nodeValue
+			document.getElementById("p1").innerHTML = xmlDoc.getElementsByTagName("mamifero")[0].childNodes[0].nodeValue
 		}
 
 		function traerAnimal2() {
